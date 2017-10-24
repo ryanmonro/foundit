@@ -1,0 +1,8 @@
+<h1>All Locations Added</h1>
+
+<div>
+  <% @locations.each do |location| %>
+    <a href="<%= location.id %>"><img src="<%= location.image %>" alt="<%= location.name %>" width="200"></a>
+  <% end %>
+
+</div>
