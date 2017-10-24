@@ -1,4 +1,7 @@
 <h1>Log In</h1>
+<% if @errors %>
+<p><%= @errors %></p>
+<% end %>
 <%= form_for(:session, url: login_path) do |f| %>
   <p>
     <%= label_tag(:username, "Username:") %>
