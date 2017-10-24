@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Foundit</title>
+    <title>FoundIt!</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <h1>FoundIt!</h1>
+  <nav>
+    <a href="<%= games_path %>">Games</a> 
+    <a href="<%= locations_path %>">Locations</a> 
+    <a href="<%= users_path %>">Leaderboard</a>
+    <a href="#">Log In</a></nav>
   <body>
     <%= yield %>
   </body>
