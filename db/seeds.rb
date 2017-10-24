@@ -6,9 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 GameLocation.destroy_all
+Found.destroy_all
 Location.destroy_all
 Game.destroy_all
 User.destroy_all
+
 Game.create(name: "Game One")
 
 l4 = Location.new(name: "Smith St Bazaar", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque.", lat: -37.799849, long: 144.983981)
@@ -51,10 +53,10 @@ l3 = Location.new(name: "Cooks Cottage", description: "Lorem ipsum dolor sit ame
 l3.image = File.open('app/assets/images/cooks.jpg')
 l3.save
 
-User.create(email: 'one@found.com', password: 'password', username: 'Harry')
-User.create(email: 'two@found.com', password: 'password', username: 'Hermione')
-User.create(email: 'three@found.com', password: 'password', username: 'Ron')
-User.create(email: 'four@found.com', password: 'password', username: 'Ginny')
+User.create(email: 'one@found.com', password: 'password', username: 'harry')
+User.create(email: 'two@found.com', password: 'password', username: 'hermione')
+User.create(email: 'three@found.com', password: 'password', username: 'ron')
+User.create(email: 'four@found.com', password: 'password', username: 'ginny')
 
 location = Location.all
 
