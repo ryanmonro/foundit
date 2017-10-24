@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+GameLocation.destroy_all
 Location.destroy_all
+Game.destroy_all
+User.destroy_all
 Game.create(name: "Game One")
-
-
 
 l4 = Location.new(name: "Smith St Bazaar", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque.", lat: -37.799849, long: 144.983981)
 l4.image = File.open('app/assets/images/bazaar.jpg')
@@ -63,3 +64,5 @@ GameLocation.create(game_id: Game.first.id, location_id: location[2].id )
 GameLocation.create(game_id: Game.first.id, location_id: location[3].id )
 GameLocation.create(game_id: Game.first.id, location_id: location[4].id )
 GameLocation.create(game_id: Game.first.id, location_id: location[5].id )
+
+Found.create(user_id: User.first.id, location_id: location.first.id)
