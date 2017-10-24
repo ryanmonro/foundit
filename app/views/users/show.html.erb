@@ -4,7 +4,7 @@
 <h2>Found these locations:</h2>
 <% @user.founds.each do |found| %>
 <!-- url to this location by id -->
-  <a href="<%= location_path(found.id) %>">
+  <a href="<%= location_path(found.location.id) %>">
     <img width="400" src="<%= found.location.image.url %>">
   </a>
 <% end %>
