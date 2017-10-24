@@ -13,7 +13,15 @@ class LocationsController < ApplicationController
   end
 
   def create
+    location = Location.new
+    location.name = params[:name]
+    location.lat = params[:lat]
+    location.long = params[:long]
+    location.description = params[:description]
+    location.image = params[:location][:image]
+    location.save
 
+    redirect_to '/locations'
   end
 
 
