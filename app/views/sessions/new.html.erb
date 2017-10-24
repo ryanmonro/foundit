@@ -1,0 +1,13 @@
+<h1>Log In</h1>
+<%= form_for(:session, url: login_path) do |f| %>
+  <p>
+    <%= label_tag(:username, "Username:") %>
+    <%= text_field_tag(:username) %>
+  </p>
+  <p>
+    <%= label_tag(:password, "Password:") %>
+    <%= text_field_tag(:username) %>
+  </p>
+
+  <button>Log In</button>
+<% end %>
