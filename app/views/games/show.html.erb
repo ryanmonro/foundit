@@ -1,0 +1,8 @@
+<h1><%= @game.name %></h1>
+
+<% @locations.each do |location| %>
+  <div style="display: inline-block;">
+    <img src="<%= location.image %>" width="200">
+    <h4><%= location.name %></h4>
+  </div>
+<% end %>

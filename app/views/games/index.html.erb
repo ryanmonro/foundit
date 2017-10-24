@@ -1,0 +1,6 @@
+<h1>Games</h1>
+
+<% @games.each do |game| %>
+  <h3><a href="games/<%= game.id %>"><%= game.name %></a></h3>
+  <p>Started on <%= game.created_at.asctime %></p>
+<% end %>
