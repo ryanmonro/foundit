@@ -42,8 +42,7 @@
           </li>
           <% if !logged_in? %>
           <li class="nav-item">
-            <!-- <%= link_to "Log In", login_path %> -->
-            <a class="nav-link" href="/login">Log In</a>
+            <%= link_to "Log In", login_path, class: "nav-link" %>
           </li>
           <% end %>
         </ul>
