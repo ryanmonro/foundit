@@ -12,23 +12,27 @@
 
 </div>
 
-<% if logged_in? %>
 <script type="text/javascript">
+var token = $('meta[name="csrf-token"]').attr('content');
+
   $('.found-it-btn').on('click', function(event) {
     event.preventDefault();
     var foundIt = {
       url: '/api/founds',
       method: 'post',
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader('X-CSRF-Token', token)
+      },
       data: {
-        user_id: <%= current_user.id %>, game_locations_id: <%= @location.id %>
+        user_id: <%= current_user.id %>, game_location_id: <%= @game_location.id %>
       }
     }
     var addFound = function(response) {
-      var $foundCount = $(event.target).closest('.found-count');
+      var $foundCount = $('.found-count');
 
-      $foundCount.text(<%= @founds.count + 1 %>);
+      $foundCount.text(response.founds);
     }
+    $.ajax(foundIt).done(addFound)
   });
 
 </script>
-<% end %>
