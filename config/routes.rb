@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get '/', to:'games#index'
 
+  # get '/gamelocations/:id', to: 'gamelocations#show'
+
+  resources :game_locations
   resources :games
   resources :users
   resources :locations
