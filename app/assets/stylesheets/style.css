@@ -22,6 +22,12 @@ h3.welcome-message {
   font-size: 22px;
 }
 
+/*--------------------CONTENT-------------------------*/
+
+.content {
+  margin: 50px;
+}
+
 /*--------------------FOOTER STYLES------------------*/
 
 footer {
