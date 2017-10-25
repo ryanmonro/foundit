@@ -5,15 +5,16 @@
   <p><%= @location.description %></p>
 </div>
 <div class="found-it">
+  <p>This location has been found <span class="found-count"><%= @founds.count %></span> times.</p>
   <% if logged_in? %>
-    <button type="button" name="button" class="found-it">Found It!</button>
+    <button type="button" name="button" class="found-it-btn">Found It!</button>
   <% end %>
-  <p>This location has been found <%= @founds.count %> times.</p>
+
 </div>
 
 <% if logged_in? %>
 <script type="text/javascript">
-  $('.found-it').on('click', function(event) {
+  $('.found-it-btn').on('click', function(event) {
     event.preventDefault();
     var foundIt = {
       url: '/api/founds',
@@ -22,7 +23,12 @@
         user_id: <%= current_user.id %>, game_locations_id: <%= @location.id %>
       }
     }
-  })
+    var addFound = function(response) {
+      var $foundCount = $(event.target).closest('.found-count');
+
+      $foundCount.text(<%= @founds.count + 1 %>);
+    }
+  });
 
 </script>
 <% end %>
