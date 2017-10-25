@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024003528) do
+ActiveRecord::Schema.define(version: 20171024235710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "founds", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_founds_on_location_id"
+    t.integer "points"
+    t.bigint "game_locations_id"
+    t.index ["game_locations_id"], name: "index_founds_on_game_locations_id"
     t.index ["user_id"], name: "index_founds_on_user_id"
   end
 
@@ -57,7 +58,7 @@ ActiveRecord::Schema.define(version: 20171024003528) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "founds", "locations"
+  add_foreign_key "founds", "game_locations", column: "game_locations_id"
   add_foreign_key "founds", "users"
   add_foreign_key "game_locations", "games"
   add_foreign_key "game_locations", "locations"

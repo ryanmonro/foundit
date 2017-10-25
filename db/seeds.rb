@@ -67,4 +67,4 @@ GameLocation.create(game_id: Game.first.id, location_id: location[3].id )
 GameLocation.create(game_id: Game.first.id, location_id: location[4].id )
 GameLocation.create(game_id: Game.first.id, location_id: location[5].id )
 
-Found.create(user_id: User.first.id, location_id: location.first.id)
+Found.create(user_id: User.first.id, game_locations_id: GameLocation.first.id, points: 10)
