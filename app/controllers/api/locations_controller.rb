@@ -6,7 +6,6 @@ class Api::LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
-    @founds = Found.where(game_locations_id: params[:id])
     render json: @location, @founds
   end
 
