@@ -5,7 +5,6 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
-    @founds = Found.all
   end
 
   def new
@@ -23,6 +22,5 @@ class LocationsController < ApplicationController
 
     redirect_to '/locations'
   end
-
 
 end

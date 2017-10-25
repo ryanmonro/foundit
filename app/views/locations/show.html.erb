@@ -4,12 +4,3 @@
   <h3>Description</h3>
   <p><%= @location.description %></p>
 </div>
-<div class="found-it">
-  <% count = 0
-  @founds.each do |found|
-      if found.location_id == @location.id
-        count += 1
-      end
-  end %>
-  <p>This location has been found <%= count %> times.</p>
-</div>
