@@ -2,7 +2,7 @@
 
 <% @locations.each do |location| %>
   <div style="display: inline-block;">
-    <a href="../locations/<%= location.id %>"><img src="<%= location.image %>" width="200"></a>
+    <a href="../game_locations/<%= location.id %>"><img src="<%= location.image %>" width="200"></a>
     <h4><%= location.name %></h4>
   </div>
 <% end %>
