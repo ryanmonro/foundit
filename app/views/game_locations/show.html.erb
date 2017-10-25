@@ -11,29 +11,18 @@
   <p>This location has been found <%= @founds.count %> times.</p>
 </div>
 
-<!-- <% if logged_in? %>
+<% if logged_in? %>
 <script type="text/javascript">
-  var foundCount = function() {
-    if (<%= @founds.count %> >== 4) {
-      var points = 1;
-    } else if (<%= @founds.count %> < 1) {
-      var points = 4;
-    } else if (<%= @founds.count %> === 2) {
-      var points = 3;
-    } else if (<%= @founds.count %> === 3) {
-      var points = 2;
-    }
-  }
   $('.found-it').on('click', function(event) {
     event.preventDefault();
     var foundIt = {
       url: '/api/founds',
       method: 'post',
       data: {
-        user_id: <%= current_user.id %>, game_locations_id: <%= @location.id %>, points: points
+        user_id: <%= current_user.id %>, game_locations_id: <%= @location.id %>
       }
     }
   })
 
 </script>
-<% end %> -->
+<% end %>
