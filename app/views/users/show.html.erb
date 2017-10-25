@@ -1,6 +1,7 @@
 <h1><%= @user.username %></h1>
 
 <% if @user.founds %>
+<h2>Points: <%= @user.points %></h2>
 <h2>Found these locations:</h2>
 <% @user.founds.each do |found| %>
 <!-- url to this location by id -->
