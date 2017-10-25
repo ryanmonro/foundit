@@ -34,6 +34,9 @@ gem 'pry-rails'
 
 gem 'carrierwave', '~> 1.0'
 
+gem 'fog'
+gem 'fog-aws'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
