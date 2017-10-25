@@ -1,7 +1,7 @@
 class GameLocationsController < ApplicationController
   def show
     @location = Location.find(params[:id])
-    # game = Game.findby(name: @location.name)
-    # @game_locations = game.game_locations
+    game_id = GameLocation.where(location_id: @location, game_id: params[:game_id])
+    @founds = Found.where(game_location_id: game_id)
   end
 end
