@@ -67,4 +67,6 @@ function setLocations(cond){
   // }
 }
 
-getLocation();
+if (window.location.pathname === "/locations/new"){
+  getLocation();
+}

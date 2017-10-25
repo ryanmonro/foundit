@@ -1,0 +1,19 @@
+<h1>Sign Up</h1>
+<% if @errors %>
+<p><%= @errors %></p>
+<% end %>
+<%= form_for(:user, url: '/users') do |f| %>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <%= f.submit "Sign Up" %>
+<% end %>
