@@ -1,0 +1,31 @@
+/*-------------------HEADER STYLES-----------------------*/
+
+header {
+  padding: 20px 0;
+  background: #e3f2fd;;
+}
+
+a.logo {
+  font-size: 42px;
+  color: #000;
+}
+
+a.logo:hover {
+  text-decoration: none;
+}
+
+.user-info {
+  text-align: right;
+}
+
+h3.welcome-message {
+  font-size: 22px;
+}
+
+/*--------------------FOOTER STYLES------------------*/
+
+footer {
+  background: #e3f2fd;
+  text-align: right;
+  padding: 10px 0;
+}
