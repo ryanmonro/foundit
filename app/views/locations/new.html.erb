@@ -1,14 +1,23 @@
 <%= form_for @locations, html: { multipart: true } do |f| %>
-  <label for="name">Name</label>
-  <input type="text" name="name" value="" placeholder="name of location...">
-  <label for="lat">Latitude</label>
-  <input type="text" name="lat" value="" placeholder="Enter decimal here...">
-  <label for="long">Longitude</label>
-  <input type="text" name="long" value="" placeholder="Enter decimal here...">
+  <p>
+    <label for="name">Name</label>
+    <input type="text" name="name" value="" placeholder="name of location...">
+  </p>
+  <p>
+    <label for="lat">Latitude</label>
+    <input id="lat" type="text" name="lat" value="" placeholder="Enter decimal here...">
+  </p>
+  <p>
+    <label for="long">Longitude</label>
+    <input id="long" type="text" name="long" value="" placeholder="Enter decimal here...">
+  </p>
   <%= f.file_field :image %>
   <%= f.hidden_field :image_cache %>
-  <label for="description">Description</label>
-  <textarea name="description" rows="8" cols="80" placeholder="Enter description and hints here..."></textarea>
+  <p>
+    <label for="description">Description</label><br>
+    <textarea name="description" rows="8" cols="80" placeholder="Enter description and hints here..."></textarea>
+    
+  </p>
   <button type="submit" name="button">Submit</button>
 
 <% end %>
