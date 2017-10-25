@@ -9,7 +9,10 @@ class GamesController < ApplicationController
   end
 
   def new
-
+    if logged_in?
+    else
+      redirect_to '/users/new'
+    end
   end
 
   def create

@@ -1,6 +1,8 @@
 <div class="container-fluid content">
   <h1>Games</h1>
+  <% if logged_in? %>
   <a href="/games/new">Create Game</a>
+  <% end %>
   <% @games.each do |game| %>
   <h3><a href="games/<%= game.id %>"><%= game.name %></a></h3>
   <p>Started on <%= game.created_at.asctime %></p>
