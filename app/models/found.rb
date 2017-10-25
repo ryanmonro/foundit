@@ -1,4 +1,4 @@
 class Found < ApplicationRecord
   belongs_to :user
-  belongs_to :location
+  belongs_to :game_location
 end
