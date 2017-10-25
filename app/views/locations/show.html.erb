@@ -5,11 +5,24 @@
   <p><%= @location.description %></p>
 </div>
 <div class="found-it">
-  <% count = 0
-  @founds.each do |found|
-      if found.location_id == @location.id
-        count += 1
-      end
-  end %>
-  <p>This location has been found <%= count %> times.</p>
+  <% if logged_in? %>
+    <button type="button" name="button" class="found-it">Found It!</button>
+  <% end %>
+  <p>This location has been found <%= @founds.count %> times.</p>
 </div>
+
+<% if logged_in? %>
+<script type="text/javascript">
+  $('.found-it').on('click', function(event) {
+    event.preventDefault();
+    var options = {
+      url: '/api/founds',
+      method: 'post',
+      data: {
+        user_id: <%= current_user.id %>, location_id: <%= @location.id %>
+      }
+    }
+  })
+
+</script>
+<% end %>
