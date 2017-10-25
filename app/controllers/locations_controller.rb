@@ -8,7 +8,11 @@ class LocationsController < ApplicationController
   end
 
   def new
+    if logged_in?
     @locations = Location.new
+    else
+      redirect_to '/users/new'
+    end
   end
 
   def create
