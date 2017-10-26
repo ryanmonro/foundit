@@ -15,7 +15,7 @@ class Api::LocationsController < ApplicationController
     game_location = GameLocation.find(params[:game_location_id])
     location = game_location.location
     distance = crow(user_lat, user_long, location.lat, location.long)
-    result = distance < 0.01
+    result = distance < 0.05
 
     render json: {distance: distance, close_enough: result}
   end
