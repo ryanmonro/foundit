@@ -7,8 +7,13 @@
     background-size: cover;
     height: 300px;
     width: 300px;
+    display: inline-block;
     img {
       width: 100%;
     }
+  }
+  .about-user {
+    display: inline-block;
+    
   }
 }
