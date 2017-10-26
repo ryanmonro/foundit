@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-
   end
 
   def create
@@ -12,7 +11,7 @@ class UsersController < ApplicationController
     if User.find_by(username: username)
       @errors = "Username already taken"
       render :new
-    else 
+    else
       @user.password = params[:user][:password]
       @user.save
       session[:user_id] = @user.id
