@@ -3,7 +3,9 @@
 <% @locations.each do |location| %>
   <div style="display: inline-block;">
     <a href="<%= @game.id %>/game_locations/<%= location.id %>"><img src="<%= location.image %>" width="200"></a>
-    <h4><%= location.name %></h4>
+    <h4><%= location.name %> <% if @user_found_location_ids.include? location.id %> Found! <% end %>
+    </h4>
   </div>
 <% end %>
   
+<%= @user_found_location_ids %>

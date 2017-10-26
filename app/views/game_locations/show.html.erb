@@ -13,7 +13,9 @@
       <button type="button" name="button" disabled class="found-it-btn">Not Close Enough to Location</button>
     <% end %>
   <% end %>
-
+<%=  @user_has_found %>
+<%= @game_location.id %>
+<%= @founds.count %>
 </div>
 <% if logged_in? %>
 <script type="text/javascript">

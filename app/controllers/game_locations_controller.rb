@@ -5,8 +5,7 @@ class GameLocationsController < ApplicationController
     @founds = Found.where(game_location_id: @game_location.id)
     @user_has_found = false
     if logged_in?
-      found = Found.where(game_location_id: @game_location.id, user_id: current_user.id)
-      if found.count > 0
+      if @founds.pluck(:user_id).include? current_user.id
         @user_has_found = true
       end
     end
