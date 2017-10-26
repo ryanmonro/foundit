@@ -38,7 +38,8 @@ var inRange = function(){
       $('.found-it-btn').prop('disabled', false);
     }
     else {
-      console.log("not close enough");
+      var metres = (response.distance * 1000).toFixed(0);
+      $('.found-it-btn').text(metres + "m away");
     }
   }
   $.ajax(closeEnoughAPICall).done(closeEnoughResponse);
@@ -61,8 +62,9 @@ $('.found-it-btn').on('click', function(event) {
   }
   var addFound = function(response) {
     var $foundCount = $('.found-count');
-
     $foundCount.text(response.founds);
+    $('.found-it-btn').text(response.points + " points");
+    $('.found-it-btn').prop('disabled', true);
   }
   $.ajax(foundIt).done(addFound)
 });
