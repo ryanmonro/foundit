@@ -53,16 +53,16 @@ l3 = Location.new(name: "Cooks Cottage", description: "Lorem ipsum dolor sit ame
 l3.image = File.open('app/assets/images/cooks.jpg')
 l3.save
 
-u1 = User.new(email: 'one@found.com', password: 'password', username: 'harry', description: 'Lorem')
+u1 = User.new(email: 'one@found.com', password: 'password', username: 'harry', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 u1.image = File.open('app/assets/images/avatars/harry.jpg')
 u1.save
-u2 = User.new(email: 'two@found.com', password: 'password', username: 'hermione', description: 'Lorem')
+u2 = User.new(email: 'two@found.com', password: 'password', username: 'hermione', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 u2.image = File.open('app/assets/images/avatars/hermione.jpg')
 u2.save
-u3 = User.new(email: 'three@found.com', password: 'password', username: 'ron', description: 'Lorem')
+u3 = User.new(email: 'three@found.com', password: 'password', username: 'ron', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 u3.image = File.open('app/assets/images/avatars/ron.jpg')
 u3.save
-u4 = User.new(email: 'four@found.com', password: 'password', username: 'ginny', description: 'Lorem')
+u4 = User.new(email: 'four@found.com', password: 'password', username: 'ginny', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 u4.image = File.open('app/assets/images/avatars/ginny.jpg')
 u4.save
 
@@ -75,4 +75,4 @@ GameLocation.create(game_id: Game.first.id, location_id: location[3].id )
 GameLocation.create(game_id: Game.first.id, location_id: location[4].id )
 GameLocation.create(game_id: Game.first.id, location_id: location[5].id )
 
-Found.create(user_id: User.first.id, game_location_id: GameLocation.first.id, points: 10)
+Found.create(user_id: User.first.id, game_location_id: GameLocation.first.id, points: 4)
