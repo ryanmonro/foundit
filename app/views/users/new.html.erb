@@ -1,19 +1,21 @@
-<h1>Sign Up</h1>
-<% if @errors %>
-<p><%= @errors %></p>
-<% end %>
-<%= form_for(:user, url: '/users') do |f| %>
-  <p>
+<div class="container-fluid content">
+  <h1>Sign Up</h1>
+  <% if @errors %>
+  <p><%= @errors %></p>
+  <% end %>
+  <%= form_for(:user, url: '/users') do |f| %>
+  <div class="form-group">
     <%= f.label :username %>
-    <%= f.text_field :username %>
-  </p>
-  <p>
+    <%= f.text_field :username, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-  <p>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :password %>
-    <%= f.password_field :password %>
-  </p>
-  <%= f.submit "Sign Up" %>
-<% end %>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+  <%= f.submit "Sign Up", class: "btn btn-info" %>
+  <% end %>
+</div>
