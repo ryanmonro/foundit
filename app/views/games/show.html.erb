@@ -1,9 +1,19 @@
-<h1><%= @game.name %></h1>
-
-<% @locations.each do |location| %>
-  <div style="display: inline-block;">
-    <a href="<%= @game.id %>/game_locations/<%= location.id %>"><img src="<%= location.image %>" width="200"></a>
-    <h4><%= location.name %> <% if @user_found_location_ids.include? location.id %> ✅ <% end %>
-    </h4>
+<div class="container-fluid content">
+  <h2><%= @game.name %></h2>
+  <div class="row">
+    <% @locations.each do |location| %>
+    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+      <a href="<%= @game.id %>/game_locations/<%= location.id %>">
+        <img class="img-fluid location-image" src="<%= location.image %>" width="100%">
+      </a>
+      <h4 class="game-location-name"><%= location.name %>
+        <% if @user_found_location_ids.include? location.id %>
+        <span class="found-tick">
+          ✅
+        </span>
+        <% end %>
+      </h4>
+    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
