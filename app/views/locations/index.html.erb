@@ -1,9 +1,16 @@
-<h1>All Locations Added</h1>
-<% if logged_in? %>
-<a href="locations/new">Add a Location</a>
-<% end %>
-<div>
-  <% @locations.each do |location| %>
-    <a href="/locations/<%= location.id %>"><img src="<%= location.image %>" alt="<%= location.name %>" width="200"></a>
+<div class="container-fluid content">
+  <h1>All Locations Added</h1>
+  <% if logged_in? %>
+  <a href="locations/new">Add a Location</a>
   <% end %>
+  <div class="row">
+      <% @locations.each do |location| %>
+      <div class="col-md-3 col-sm-6 mb-4">
+      <a href="/locations/<%= location.id %>">
+        <img class="img-fluid location-image" src="<%= location.image %>" alt="<%= location.name %>" width="100%">
+      </a>
+    </div>
+      <% end %>
+  </div>
+
 </div>
