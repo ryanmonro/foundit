@@ -25,6 +25,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    users = User.all
+    @users = []
+    users.each do |user|
+      @users.push user #{:username => user.name, :score => user.score, :id => user.id}
+    end
+    @users.sort_by! {|user| user.points}
+    @users.reverse!
   end
 end

@@ -11,4 +11,13 @@ class User < ApplicationRecord
     end
     points
   end
+
+  def points_for_game
+    my_founds = Found.where(user_id: id)
+    points = 0
+    my_founds.each do |f|
+      points += f.points
+    end
+    points
+  end
 end
