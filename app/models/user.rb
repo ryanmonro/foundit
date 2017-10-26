@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :founds
+  mount_uploader :image, ImageUploader
 
   def points
     my_founds = Found.where(user_id: id)
