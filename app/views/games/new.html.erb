@@ -1,5 +1,9 @@
-<%= form_tag '/games', method: 'post' do %>
-  <label for="">Name of Game:</label>
-  <input type="text" name="name">
-  <button>Create</button>
-<% end %>
+<div class="container-fluid content">
+  <%= form_tag '/games', method: 'post' do %>
+  <div class="form-group">
+    <label for="">Name of Game:</label>
+    <input class="form-control" type="text" name="name">    
+  </div>
+  <button class="btn btn-info">Create</button>
+  <% end %>
+</div>
