@@ -53,11 +53,7 @@ a {
 }
 
 a:hover {
-  text-decoration: none;
-  background: #17a2b8;
-  padding: 5px 10px;
-  border-radius: 5%;
-  color: #fff;
+  color: #00b0ff;
 }
 
 /*-----------------------LOCATION PAGES----------------------*/
@@ -90,6 +86,10 @@ a:hover {
 .found-it {
   text-align: center;
   padding-top: 50px;
+}
+
+.found-it-btn {
+  cursor: pointer;
 }
 
 .found-tick {
