@@ -6,11 +6,15 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @locations = @game.locations
+    # if logged_in?
+    #   @user_found_game_location_ids = Found.where(user_id: current_user.id, game_location:@game.game_locations).pluck(:game_location_id)
+      
+    # end
+
   end
 
   def new
-    if logged_in?
-    else
+    if !logged_in?
       redirect_to '/users/new'
     end
   end
