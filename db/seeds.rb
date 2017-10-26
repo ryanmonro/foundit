@@ -41,22 +41,30 @@ l10 = Location.new(name: "Transformer", description: "Lorem ipsum dolor sit amet
 l10.image = File.open('app/assets/images/transformer.jpg')
 l10.save
 
-l1 = Location.new(name: "joker", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque. Etiam condimentum ante a ullamcorper vestibulum. Sed fringilla arcu quis accumsan luctus. Etiam in orci sapien. Vestibulum in nunc non lectus tempor varius.")
+l1 = Location.new(name: "joker", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque. Etiam condimentum ante a ullamcorper vestibulum. Sed fringilla arcu quis accumsan luctus. Etiam in orci sapien. Vestibulum in nunc non lectus tempor varius.", lat: -37.795871, long: 144.979376)
 l1.image = File.open('app/assets/images/joker.jpg')
 l1.save
 
-l2 = Location.new(name: "Horse", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque. Etiam condimentum ante a ullamcorper vestibulum. Sed fringilla arcu quis accumsan luctus. Etiam in orci sapien. Vestibulum in nunc non lectus tempor varius.")
+l2 = Location.new(name: "Horse", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque. Etiam condimentum ante a ullamcorper vestibulum. Sed fringilla arcu quis accumsan luctus. Etiam in orci sapien. Vestibulum in nunc non lectus tempor varius.", lat: -37.795871, long: 144.979376)
 l2.image = File.open('app/assets/images/horse.jpg')
 l2.save
 
-l3 = Location.new(name: "Cooks Cottage", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque.")
+l3 = Location.new(name: "Cooks Cottage", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque.", lat: -37.795871, long: 144.979376)
 l3.image = File.open('app/assets/images/cooks.jpg')
 l3.save
 
-User.create(email: 'one@found.com', password: 'password', username: 'harry')
-User.create(email: 'two@found.com', password: 'password', username: 'hermione')
-User.create(email: 'three@found.com', password: 'password', username: 'ron')
-User.create(email: 'four@found.com', password: 'password', username: 'ginny')
+u1 = User.new(email: 'one@found.com', password: 'password', username: 'harry', description: 'Lorem')
+u1.image = File.open('app/assets/images/avatars/harry.jpg')
+u1.save
+u2 = User.new(email: 'two@found.com', password: 'password', username: 'hermione', description: 'Lorem')
+u2.image = File.open('app/assets/images/avatars/hermione.jpg')
+u2.save
+u3 = User.new(email: 'three@found.com', password: 'password', username: 'ron', description: 'Lorem')
+u3.image = File.open('app/assets/images/avatars/ron.jpg')
+u3.save
+u4 = User.new(email: 'four@found.com', password: 'password', username: 'ginny', description: 'Lorem')
+u4.image = File.open('app/assets/images/avatars/ginny.jpg')
+u4.save
 
 location = Location.all
 
