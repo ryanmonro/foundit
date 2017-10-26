@@ -44,8 +44,20 @@ body {
   background: #fff;
   padding: 20px;
   width: 80%;
-  margin-top: 15em;
+  margin-top: 50px;
   margin-bottom: 50px;
+}
+
+a {
+  color: #17a2b8;
+}
+
+a:hover {
+  text-decoration: none;
+  background: #17a2b8;
+  padding: 5px 10px;
+  border-radius: 5%;
+  color: #fff;
 }
 
 /*-----------------------LOCATION PAGES----------------------*/
