@@ -2,12 +2,12 @@
 
 header {
   padding: 20px 0;
-  background: #e3f2fd;;
+  background: #1c313a;
 }
 
 a.logo {
   font-size: 42px;
-  color: #000;
+  color: #fff;
   font-family: 'Leckerli One', cursive;
 }
 
@@ -23,6 +23,13 @@ h3.welcome-message {
   font-size: 22px;
 }
 
+nav {
+  background: #455a64;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
 /*--------------------CONTENT-------------------------*/
 body {
   font-family: 'Raleway', sans-serif;
@@ -42,14 +49,14 @@ body {
 }
 
 .location-image {
-  width: 100%;
-  height: auto;
+  height: 12em;
 }
 
 /*--------------------FOOTER STYLES------------------*/
 
 footer {
-  background: #e3f2fd;
+  background: #1c313a;
   text-align: right;
   padding: 10px 0;
+  color: #fff;
 }
