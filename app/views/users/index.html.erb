@@ -1,7 +1,13 @@
 <div class="container-fluid content">
-  <h1>Leaderboard</h1>
-  <% @users.each do |user| %>
-    <p><a href="<%= user_path(user.id) %>"><%= user.username %></a> - <%= user.points %> points</p>
+  <div class="leaderboard">
+    <h4>Leaderboard</h4>
+    <% @users.each do |user| %>
+    <p class="leaderboard-user">
+      <a href="<%= user_path(user.id) %>"><%= user.username %></a>
+      <span><%= user.points %> points</span>
+    </p>
 
-  <% end %>
+    <% end %>
+
+  </div>
 </div>
