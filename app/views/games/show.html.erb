@@ -9,6 +9,10 @@
 <% end %>
 
 <h1>Leaderboard</h1>
+<% if @scores.count > 0 %>
 <% @scores.each do |score| %>
   <p><a href="<%= user_path(score.id) %>"><%= score.username %></a> - <%= score.points_for_game @game.id %> points</p>
+<% end %>
+<% else %>
+  <p>no points have been scored for this game yet
 <% end %>

@@ -10,7 +10,9 @@ class GamesController < ApplicationController
     @scores = []
     @users = User.all
     @users.each do |user|
-      @scores.push user
+      if user.points_for_game(@game.id) > 0
+        @scores.push user
+      end
     end
     @scores.sort_by! {|user| user.points_for_game @game.id}
     @scores.reverse!
