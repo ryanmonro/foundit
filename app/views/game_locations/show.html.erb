@@ -15,25 +15,46 @@
 <script type="text/javascript">
 var token = $('meta[name="csrf-token"]').attr('content');
 
-  $('.found-it-btn').on('click', function(event) {
-    event.preventDefault();
-    var foundIt = {
-      url: '/api/founds',
-      method: 'post',
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('X-CSRF-Token', token)
-      },
-      data: {
-        user_id: <%= current_user.id %>, game_location_id: <%= @game_location.id %>
-      }
+var closeEnough = function(){
+  getLocation();
+  var closeEnoughAPICall = {
+    url: '/api/close_enough',
+    method: 'get',
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader('X-CSRF-Token', token)
+    },
+    data: {
+      lat: deviceLat, long: deviceLong, game_location_id: <%= @game_location.id %>
     }
-    var addFound = function(response) {
-      var $foundCount = $('.found-count');
+  }
+  var closeEnoughResponse = function(response){
+    console.log(response);
+  }
+  $.ajax(closeEnoughAPICall).done(closeEnoughResponse);
 
-      $foundCount.text(response.founds);
+}
+
+closeEnough();
+
+$('.found-it-btn').on('click', function(event) {
+  event.preventDefault();
+  var foundIt = {
+    url: '/api/founds',
+    method: 'post',
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader('X-CSRF-Token', token)
+    },
+    data: {
+      user_id: <%= current_user.id %>, game_location_id: <%= @game_location.id %>
     }
-    $.ajax(foundIt).done(addFound)
-  });
+  }
+  var addFound = function(response) {
+    var $foundCount = $('.found-count');
+
+    $foundCount.text(response.founds);
+  }
+  $.ajax(foundIt).done(addFound)
+});
 
 </script>
 <% end %>

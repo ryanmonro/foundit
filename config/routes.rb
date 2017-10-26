@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/', to:'games#index'
 
   post '/api/founds', to: 'api/founds#create'
+  get '/api/close_enough', to: 'api/locations#close_enough'
 
   # get '/gamelocations/:id', to: 'gamelocations#show'
 
