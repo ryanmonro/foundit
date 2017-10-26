@@ -114,6 +114,30 @@ a:hover {
   padding: 30px 0;
 }
 
+/*-----------------------LEADERBOARD-----------------------------*/
+
+.leaderboard {
+  padding: 20px 0 20px 20px;
+  margin-bottom: 20px;
+
+}
+
+.leaderboard h4 {
+  padding-bottom: 30px;
+}
+
+.leaderboard-user {
+  background: #e3e3e3;
+  width: 300px;
+  padding: 5px 20px;
+  border-bottom: 1px solid #718792 ;
+  display: block;
+}
+
+.leaderboard-user span {
+  float: right;
+}
+
 /*--------------------FOOTER STYLES------------------*/
 
 footer {
