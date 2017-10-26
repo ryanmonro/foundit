@@ -7,7 +7,11 @@
 <div class="found-it">
   <p>This location has been found <span class="found-count"><%= @founds.count %></span> times.</p>
   <% if logged_in? %>
-    <button type="button" name="button" class="found-it-btn">Found It!</button>
+    <% if @user_has_found %>
+      <p>You have found this location!</p>
+    <% else %>
+      <button type="button" name="button" disabled class="found-it-btn">Not Close Enough to Location</button>
+    <% end %>
   <% end %>
 
 </div>
@@ -15,7 +19,7 @@
 <script type="text/javascript">
 var token = $('meta[name="csrf-token"]').attr('content');
 
-var closeEnough = function(){
+var inRange = function(){
   getLocation();
   var closeEnoughAPICall = {
     url: '/api/close_enough',
@@ -29,12 +33,19 @@ var closeEnough = function(){
   }
   var closeEnoughResponse = function(response){
     console.log(response);
+    if (response.close_enough){
+      $('.found-it-btn').text("Found It!");
+      $('.found-it-btn').prop('disabled', false);
+    }
+    else {
+      console.log("not close enough");
+    }
   }
   $.ajax(closeEnoughAPICall).done(closeEnoughResponse);
-
 }
 
-closeEnough();
+inRange();
+
 
 $('.found-it-btn').on('click', function(event) {
   event.preventDefault();
