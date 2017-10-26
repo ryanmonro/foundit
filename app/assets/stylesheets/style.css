@@ -8,6 +8,7 @@ header {
 a.logo {
   font-size: 42px;
   color: #000;
+  font-family: 'Leckerli One', cursive;
 }
 
 a.logo:hover {
@@ -23,13 +24,26 @@ h3.welcome-message {
 }
 
 /*--------------------CONTENT-------------------------*/
+body {
+  font-family: 'Raleway', sans-serif;
+}
 
 .content {
   padding: 50px;
   width: 80%;
   margin-top: 50px;
   margin-bottom: 50px;
+}
 
+/*-----------------------LOCATION PAGES----------------------*/
+
+.location-desc {
+  padding: 10px 50px;
+}
+
+.location-image {
+  width: 100%;
+  height: auto;
 }
 
 /*--------------------FOOTER STYLES------------------*/

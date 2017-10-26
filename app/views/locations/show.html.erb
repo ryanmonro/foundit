@@ -1,6 +1,11 @@
-<h2><%= @location.name %></h2>
-<img src="<%= @location.image %>" alt="<%= @location.name %>" width="400">
-<div class="location-desc">
-  <h3>Description</h3>
-  <p><%= @location.description %></p>
+<div class="container-fluid content">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4 location-image">
+      <img src="<%= @location.image %>" alt="<%= @location.name %>" width="100%">
+    </div>
+    <div class="col-12 col-md-6 col-lg-8 location-desc">
+      <h2><%= @location.name %></h2>
+      <p><%= @location.description %></p>
+    </div>
+  </div>
 </div>
