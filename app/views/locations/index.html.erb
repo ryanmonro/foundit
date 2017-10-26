@@ -6,15 +6,15 @@
   <div class="add-location">
     <% if logged_in? %>
     <a class="btn btn-info" href="locations/new">Add a Location</a>
-    <% end %>    
+    <% end %>
   </div>
   <div class="row">
-      <% @locations.each do |location| %>
-      <div class="col-md-3 col-sm-6 mb-4">
-      <a href="/locations/<%= location.id %>">
-        <img class="img-fluid location-image" src="<%= location.image %>" alt="<%= location.name %>" width="100%">
-      </a>
+    <% @locations.each do |location| %>
+    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+    <a href="/locations/<%= location.id %>">
+      <img class="img-fluid location-image" src="<%= location.image %>" alt="<%= location.name %>" width="100%">
+    </a>
     </div>
-      <% end %>
+    <% end %>
   </div>
 </div>

@@ -64,6 +64,20 @@ body {
   padding-bottom: 30px;
 }
 
+/*----------------------------GAMES PAGE---------------------------*/
+
+.game-box {
+  padding: 20px;
+}
+.game-image {
+  height: 12em;
+  object-fit: cover;
+}
+
+.add-game {
+  padding: 30px 0;
+}
+
 /*--------------------FOOTER STYLES------------------*/
 
 footer {
