@@ -6,13 +6,13 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @locations = @game.locations
-    # ugh
+    founds = @game.founds
     @scores = []
     @users = User.all
     @users.each do |user|
       @scores.push user
     end
-    @scores.sort_by! {|user| user.points}
+    @scores.sort_by! {|user| user.points_for_game @game.id}
     @scores.reverse!
     @user_found_location_ids = []
     if logged_in?

@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     users = User.all
     @users = []
     users.each do |user|
-      @users.push user #{:username => user.name, :score => user.score, :id => user.id}
+      @users.push user 
     end
     @users.sort_by! {|user| user.points}
     @users.reverse!
