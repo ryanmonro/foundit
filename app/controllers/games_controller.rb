@@ -6,8 +6,8 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @locations = @game.locations
+    @user_found_location_ids = []
     if logged_in?
-      @user_found_location_ids = []
       @game.founds.each do |gamefound|
         if gamefound.user == current_user
           new_id = gamefound.game_location.location.id
