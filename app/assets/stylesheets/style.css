@@ -1,8 +1,11 @@
 /*-------------------HEADER STYLES-----------------------*/
 
 header {
-  padding: 20px 0;
   background: #1c313a;
+}
+
+.logo-row {
+  padding: 20px 0;
 }
 
 a.logo {
@@ -34,12 +37,14 @@ nav {
 /*--------------------CONTENT-------------------------*/
 body {
   font-family: 'Raleway', sans-serif;
+  background: #718792;
 }
 
 .content {
-  padding: 50px;
+  background: #fff;
+  padding: 20px;
   width: 80%;
-  margin-top: 50px;
+  margin-top: 15em;
   margin-bottom: 50px;
 }
 
@@ -64,6 +69,25 @@ body {
   padding-bottom: 30px;
 }
 
+.game-location-name {
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.found-it {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.found-tick {
+  color: #fff;
+  background: #39cc54;
+  border: 1px solid #39cc54;
+  border-radius: 50%;
+  padding: 0 5px;
+  margin-left: 20px;
+}
 /*----------------------------GAMES PAGE---------------------------*/
 
 .game-box {
