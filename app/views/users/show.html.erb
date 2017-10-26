@@ -2,15 +2,14 @@
   <h1><%= @user.username %></h1>
   <div class="user-details">
     <div class="user-avatar">
-      <img src="<%= @user.image %>" alt="<%= @user.username %> profile picture">
-      <button type="button" name="button">Edit image</button>
+      <img src="<%= @user.image %>">
     </div>
 
     <div class="about-user">
       <h3>About <%= @user.username %></h3>
       <p><%= @user.description %></p>
-      <button type="button" name="button">Edit</button>
     </div>
+    <button type="button" name="button">Edit Profile</button>
   </div>
 
   <% if @user.founds %>
