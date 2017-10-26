@@ -1,8 +1,13 @@
 <div class="container-fluid content">
-  <h1>All Locations Added</h1>
-  <% if logged_in? %>
-  <a href="locations/new">Add a Location</a>
-  <% end %>
+  <h1>All Locations</h1>
+  <p class="locations-index-desc">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.<br>
+  </p>
+  <div class="add-location">
+    <% if logged_in? %>
+    <a class="btn btn-info" href="locations/new">Add a Location</a>
+    <% end %>    
+  </div>
   <div class="row">
       <% @locations.each do |location| %>
       <div class="col-md-3 col-sm-6 mb-4">
@@ -12,5 +17,4 @@
     </div>
       <% end %>
   </div>
-
 </div>

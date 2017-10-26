@@ -51,6 +51,17 @@ body {
 
 .location-image {
   height: 12em;
+  object-fit: cover;
+}
+
+.locations-index-desc {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.add-location {
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 /*--------------------FOOTER STYLES------------------*/
