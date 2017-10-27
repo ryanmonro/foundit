@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     username = params[:user][:username].downcase
     @user.username = username
     @user.email = params[:user][:email]
+    @user.image = params[:user][:image]
+    @user.description = params[:user][:description]
     if User.find_by(username: username)
       @errors = "Username already taken"
       render :new
