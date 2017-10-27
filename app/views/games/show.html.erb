@@ -3,15 +3,21 @@
   <div class="leaderboard">
     <h4>Leaderboard</h4>
     <% if @scores.count > 0 %>
-      <% @scores.each do |score| %>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <% @scores.each do |score| %>
         <img class="leaderboard-user-avatar img-fluid" src="<%= User.find_by(username: score.username).image.url %>" alt="">
         <p class="leaderboard-user">
-          <a href="<%= user_path(score.id) %>"><%= score.username %></a>  <span><%= score.points_for_game @game.id %> points</span>
+          <a href="<%= user_path(score.id) %>"><%= score.username %></a>  <span class="leaderboard-points">
+            <%= score.points_for_game @game.id %> points
+          </span>
         </p>
-      <% end %>
-    <% else %>
-      <p>no points have been scored for this game yet</p>
-    <% end %>
+        <% end %>
+        <% else %>
+        <p>no points have been scored for this game yet</p>
+        <% end %>        
+      </div>
+    </div>
   </div>
   <div class="row">
     <% @locations.each do |location| %>

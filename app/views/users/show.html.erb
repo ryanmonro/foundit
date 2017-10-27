@@ -1,29 +1,35 @@
 <div class="container-fluid content">
-  <h1><%= @user.username %></h1>
-  <div class="user-details">
-    <div class="user-avatar">
-      <img src="<%= @user.image %>">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4 user-avatar">
+      <img class="img-fluid" src="<%= @user.image %>" width="100%">
     </div>
-
-    <div class="about-user">
-      <h3>About <%= @user.username %></h3>
-      <p><%= @user.description %></p>
+    <div class="col-12 col-md-6 col-lg-8 about-user">
+      <h2><%= @user.username %></h2>
+      <% if @user == current_user %>
+      <a href="<%= @user.id %>/edit">Edit Profile</a>
+      <% end %>
+      <div class="user-description">
+        <p><%= @user.description %></p>        
+      </div>
     </div>
-    <% if @user == current_user %>
-    <a href="<%= @user.id %>/edit">Edit Profile</a>
-    <% end %>
   </div>
 
   <% if @user.founds %>
-    <h2>Points: <%= @user.points %></h2>
-    <h2>Found these locations:</h2>
-    <% locations_arr = locations_found @user %>
-    <% locations_arr.each do |location| %>
-    <!-- url to this location by id -->
-      <a href="<%= location_path(location) %>">
-        <img width="400" src="<%= Location.find(location).image.url %>">
-      </a>
-    <% end %>
+  <div class="user-profile-points">
+    <p>Points: <%= @user.points %></p>
+  </div>
+    <p class="user-profile-locations">Found these locations:</p>
+    <div class="row">
+      <% locations_arr = locations_found @user %>
+      <% locations_arr.each do |location| %>
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <!-- url to this location by id -->
+        <a href="<%= location_path(location) %>">
+          <img class="img-fluid location-image" width="100%" src="<%= Location.find(location).image.url %>">
+        </a>
+      </div>
+      <% end %>
+    </div>
   <% else %>
   <h2>No locations found yet</h2>
   <% end %>
