@@ -91,12 +91,22 @@ a:hover {
 .found-it-btn {
   cursor: pointer;
 }
-
+.game-location-link {
+  position: relative;
+}
 .found-tick {
-  color: #00b0ff;
-  font-size: 35px;
-  padding: 0 5px;
-  margin-left: 20px;
+  position: absolute;
+  top: -30px;
+  right: 38%;
+  color: #fff;
+  background-color: #00b0ff;
+  padding: 8px 10px;
+  border-radius: 50%;
+  font-size: 60px;
+  text-align: center;
+}
+.found-tick::before {
+  vertical-align: middle;
 }
 /*----------------------------GAMES PAGE---------------------------*/
 
