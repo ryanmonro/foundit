@@ -11,7 +11,9 @@
     <div class="col-12 col-sm-6 col-lg-4 game-box">
       <h4><a href="games/<%= game.id %>"><%= game.name %></a></h4>
       <p>Started on <%= game.created_at.strftime("%d-%m-%Y") %></p>
-      <img class="img-fluid game-image" src="<%= game.locations.first.image.url %>" alt="" width="100%">
+      <a href="games/<%= game.id %>">
+        <img class="img-fluid game-image" src="<%= game.locations.first.image.url %>" alt="" width="100%">
+      </a>
     </div>
     <% end %>
   </div>
