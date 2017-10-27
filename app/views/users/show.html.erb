@@ -9,7 +9,9 @@
       <h3>About <%= @user.username %></h3>
       <p><%= @user.description %></p>
     </div>
-    <button type="button" name="button">Edit Profile</button>
+    <% if @user == current_user %>
+    <a href="<%= @user.id %>/edit">Edit Profile</a>
+    <% end %>
   </div>
 
   <% if @user.founds %>
