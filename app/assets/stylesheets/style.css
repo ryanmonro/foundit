@@ -9,7 +9,7 @@ header {
 }
 
 a.logo {
-  font-size: 42px;
+  font-size: 55px;
   color: #fff;
   font-family: 'Leckerli One', cursive;
 }
@@ -127,14 +127,28 @@ a:hover {
 .leaderboard-user {
   background: #e3e3e3;
   width: 300px;
-  padding: 5px 20px;
+  padding: 22px;
   border-bottom: 1px solid #718792 ;
   display: block;
 }
 
-.leaderboard-user span {
+.leaderboard-user a {
+  margin-left: 10px;
+}
+
+.leaderboard-points {
   float: right;
 }
+.leaderboard-user-avatar{
+  width: 50px;
+  height: 50px;
+  margin: 10px 0 10px 10px;
+  border-radius: 50%;
+  float: left;
+  vertical-align: middle;
+  background-image: url("http://placehold.it/750x500");
+}
+
 
 /*--------------------FOOTER STYLES------------------*/
 

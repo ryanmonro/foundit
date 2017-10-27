@@ -4,6 +4,7 @@
     <h4>Leaderboard</h4>
     <% if @scores.count > 0 %>
       <% @scores.each do |score| %>
+        <img class="leaderboard-user-avatar img-fluid" src="<%= User.find_by(username: score.username).image.url %>" alt="">
         <p class="leaderboard-user">
           <a href="<%= user_path(score.id) %>"><%= score.username %></a>  <span><%= score.points_for_game @game.id %> points</span>
         </p>
