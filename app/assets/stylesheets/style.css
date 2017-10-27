@@ -93,10 +93,8 @@ a:hover {
 }
 
 .found-tick {
-  color: #fff;
-  background: #39cc54;
-  border: 1px solid #39cc54;
-  border-radius: 50%;
+  color: #00b0ff;
+  font-size: 35px;
   padding: 0 5px;
   margin-left: 20px;
 }
