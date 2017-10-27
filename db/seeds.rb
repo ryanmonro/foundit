@@ -11,7 +11,8 @@ Location.destroy_all
 Game.destroy_all
 User.destroy_all
 
-Game.create(name: "Game One")
+g1 = Game.create(name: "Game One")
+g2 = Game.create(name: "Game Two")
 
 l4 = Location.new(name: "Smith St Bazaar", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque.", lat: -37.799849, long: 144.983981)
 l4.image = File.open('app/assets/images/bazaar.jpg')
@@ -41,6 +42,18 @@ l10 = Location.new(name: "Transformer", description: "Lorem ipsum dolor sit amet
 l10.image = File.open('app/assets/images/transformer.jpg')
 l10.save
 
+l11 = Location.new(name: "Neon sign", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque.", lat: -37.818624299999996, long: 144.9593399)
+l11.image = File.open('app/assets/images/ga.jpg')
+l11.save
+
+l12 = Location.new(name: "Vending machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque.", lat: -37.818624299999996, long: 144.9593399)
+l12.image = File.open('app/assets/images/vending.jpg')
+l12.save
+
+l13 = Location.new(name: "Honeywell thing", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque.", lat: -37.818624299999996, long: 144.9593399)
+l13.image = File.open('app/assets/images/honeywell.jpg')
+l13.save
+
 l1 = Location.new(name: "joker", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper ultrices odio vel maximus. Donec quis tempor arcu, et accumsan felis. Aliquam erat volutpat. Nulla facilisi. Aliquam vel mauris ac velit maximus tempor sit amet ut neque. Etiam condimentum ante a ullamcorper vestibulum. Sed fringilla arcu quis accumsan luctus. Etiam in orci sapien. Vestibulum in nunc non lectus tempor varius.", lat: -37.795871, long: 144.979376)
 l1.image = File.open('app/assets/images/joker.jpg')
 l1.save
@@ -68,11 +81,26 @@ u4.save
 
 location = Location.all
 
-GameLocation.create(game_id: Game.first.id, location_id: location[0].id )
-GameLocation.create(game_id: Game.first.id, location_id: location[1].id )
-GameLocation.create(game_id: Game.first.id, location_id: location[2].id )
-GameLocation.create(game_id: Game.first.id, location_id: location[3].id )
-GameLocation.create(game_id: Game.first.id, location_id: location[4].id )
-GameLocation.create(game_id: Game.first.id, location_id: location[5].id )
+GameLocation.create(game_id: g1.id, location_id: location[0].id )
+GameLocation.create(game_id: g1.id, location_id: location[1].id )
+GameLocation.create(game_id: g1.id, location_id: location[2].id )
+GameLocation.create(game_id: g1.id, location_id: location[3].id )
+GameLocation.create(game_id: g1.id, location_id: location[4].id )
 
-Found.create(user_id: User.first.id, game_location_id: GameLocation.first.id, points: 4)
+GameLocation.create(game_id: g2.id, location_id: location[5].id )
+ga = GameLocation.create(game_id: g2.id, location_id: l11.id )
+vending = GameLocation.create(game_id: g2.id, location_id: l12.id )
+honeywell = GameLocation.create(game_id: g2.id, location_id: l13.id )
+
+game_locations = GameLocation.all
+Found.create(user_id: u1.id, game_location_id: game_locations[0].id, points: 4)
+Found.create(user_id: u1.id, game_location_id: game_locations[1].id, points: 4)
+Found.create(user_id: u2.id, game_location_id: game_locations[1].id, points: 3)
+Found.create(user_id: u3.id, game_location_id: game_locations[2].id, points: 4)
+
+Found.create(user_id: u4.id, game_location_id: ga.id, points: 3)
+Found.create(user_id: u3.id, game_location_id: ga.id, points: 4)
+Found.create(user_id: u2.id, game_location_id: vending.id, points: 4)
+Found.create(user_id: u2.id, game_location_id: honeywell.id, points: 4)
+Found.create(user_id: u2.id, game_location_id: ga.id, points: 2)
+
