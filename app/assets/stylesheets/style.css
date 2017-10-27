@@ -16,6 +16,7 @@ a.logo {
 
 a.logo:hover {
   text-decoration: none;
+  color: #fff;
 }
 
 .user-info {
