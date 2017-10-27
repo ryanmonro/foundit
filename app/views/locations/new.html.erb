@@ -26,7 +26,18 @@
   <% end %>
   
   <script>
-    getLocation();
+    function setPosition(position) {
+      deviceLat = position.coords.latitude;
+      deviceLong = position.coords.longitude;
+      setLocationFields();
+    }
+
+    function setLocationFields(){
+      document.querySelector("#lat").value = deviceLat;
+      document.querySelector("#long").value = deviceLong;
+    }
+
+    getLocation(setPosition, setLocationFields);
   </script>
 
 </div>

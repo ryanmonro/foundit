@@ -28,7 +28,6 @@
 var token = $('meta[name="csrf-token"]').attr('content');
 
 var inRange = function(){
-  getLocation();
   var closeEnoughAPICall = {
     url: '/api/close_enough',
     method: 'get',
@@ -53,8 +52,13 @@ var inRange = function(){
   $.ajax(closeEnoughAPICall).done(closeEnoughResponse);
 }
 
-inRange();
+  function setPosition(position) {
+    deviceLat = position.coords.latitude;
+    deviceLong = position.coords.longitude;
+    inRange();  
+  }
 
+  getLocation(setPosition, null);
 
 $('.found-it-btn').on('click', function(event) {
   event.preventDefault();
