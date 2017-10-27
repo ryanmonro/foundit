@@ -37,6 +37,7 @@ nav {
 /*--------------------CONTENT-------------------------*/
 body {
   font-family: 'Raleway', sans-serif;
+  background: #718792;
 }
 
 .content {
@@ -141,6 +142,8 @@ a:hover {
 
 .leaderboard-user a {
   margin-left: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .leaderboard-points {
@@ -178,4 +181,12 @@ footer {
   text-align: right;
   padding: 10px 0;
   color: #fff;
+}
+
+/*---------------------MEDIA QUERIES-----------------*/
+
+@media (max-width: 720px) {
+  body {
+    background: #fff;
+  }
 }
