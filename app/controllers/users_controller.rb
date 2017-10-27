@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.image = params[:user][:image]
-    user.description = params[:description]
+    user.description = params[:user][:description]
     user.save
 
     redirect_to "/users/#{user.id}"
