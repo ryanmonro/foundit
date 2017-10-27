@@ -97,7 +97,7 @@ a:hover {
 .found-tick {
   position: absolute;
   top: -30px;
-  right: 38%;
+  right: 38%; 
   color: #fff;
   background-color: #00b0ff;
   padding: 8px 10px;
